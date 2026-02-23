@@ -1,0 +1,36 @@
+const jwt = require("jsonwebtoken");
+
+const isAdmin = (req, res, next) => {
+  try {
+
+    const authHeader = req.headers.authorization;
+
+    if (!authHeader) {
+      return res.status(401).json({
+        message: "No token provided"
+      });
+    }
+
+    // Remove Bearer
+    const token = authHeader.split(" ")[1];
+
+    const decoded = jwt.verify(token, "SECRETKEY");
+
+    if (decoded.role !== "admin") {
+      return res.status(403).json({
+        message: "Admin only"
+      });
+    }
+
+    req.user = decoded;
+
+    next();
+
+  } catch (error) {
+    res.status(401).json({
+      message: "Invalid token"
+    });
+  }
+};
+
+module.exports = isAdmin;

@@ -1,0 +1,517 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p,li,a,button{
+  font-size: 1.7rem;
+  letter-spacing: .1rem;
+}
+
+/*
+header{
+  height: 10rem;
+  box-shadow: rgba(244, 158, 52, 0.1) 0px 10px 10px -10px;
+  background-color: rgb(241, 90, 14);
+  width: 100%;
+}*/
+
+
+
+
+/* ===== Banner Section ===== */
+
+.banner {
+  width: 100%;
+  background-color: #fff;
+  padding: 3rem 0;
+}
+
+.banner-container {
+  width: 80%;
+  max-width: 120rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-container img {
+  width: 100%;
+  height: 45rem;
+  object-fit: cover;
+  border-radius: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 24px;
+  transition: opacity 0.8s ease-in-out;
+}
+
+
+/*   ---------Courses Layer ---------*/
+.course-section{
+  padding: 5rem 0;
+  background-color: #fffaf2;;
+}
+
+.section-title{
+  text-align: center;
+  font-size: 3.2rem;
+  margin-bottom: 4rem;
+}
+
+.course-row{
+  max-width: 132rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.course-card{
+  width: 22rem;
+  height: 28rem;
+  background-color: white;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 20px;
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover{
+  transform: translateY(-8px)
+}
+
+.course-card img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.course-info {
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-header {
+  max-width: 132rem;
+  margin: 0 auto 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-header input {
+  width: 260px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.course-name{
+  font-weight: bold;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.status{
+  padding: 0.4rem 1rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.status.live {
+  background-color: #2ecc71;
+}
+
+.status.upcoming {
+  background-color: #f39c12;
+}
+
+.status.recorded {
+  background-color: #3498db;
+}
+
+/*   Book Section   */
+
+.Book-section{
+  padding: 5rem 0;
+  background-color: #fffaf2;;
+}
+
+.book-row{
+  max-width: 132rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.Book-Card{
+  width: 22rem;
+  height: 28rem;
+  background-color: white;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 20px;
+  transition: transform 0.3s ease;
+}
+
+.Book-Card:hover{
+  transform: translateY(-8px)
+}
+
+.Book-Card img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.Book-info {
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Book-name{
+  font-weight: bold;
+}
+
+.book-header {
+  max-width: 132rem;
+  margin: 0 auto 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-header input {
+  width: 260px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+
+/* ------ Product Section ----*/
+
+
+.Product-Section{
+  padding: 5rem 0;
+  background-color: #fffaf2;;
+}
+
+.Product-row{
+  max-width: 132rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.Product-Card{
+  width: 22rem;
+  height: 28rem;
+  background-color: white;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 20px;
+  transition: transform 0.3s ease;
+}
+
+.Product-Card:hover{
+  transform: translateY(-8px)
+}
+
+.Product-Card img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.Product-info {
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Product-name{
+  font-weight: bold;
+}
+
+.product-header {
+  max-width: 132rem;
+  margin: 0 auto 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-header input {
+  width: 260px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Highlight style */
+.highlight {
+  background-color: #ffe58a;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+
+/*  --- Centres ---*/
+
+.Centre-Section {
+  padding: 5rem 0;
+  background-color: #fffaf2;
+}
+
+.centre-header {
+  max-width: 132rem;
+  margin: 0 auto 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.centre-header input {
+  width: 260px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.Centre-row {
+  max-width: 132rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.Centre-Card {
+  width: 22rem;
+  height: 28rem;
+  background-color: white;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 20px;
+  transition: transform 0.3s ease;
+}
+
+.Centre-Card:hover {
+  transform: translateY(-8px);
+}
+
+.Centre-Card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.centre-info {
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Centre-name {
+  font-weight: bold;
+}
+
+.nearest-badge {
+  background-color: #4caf50;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+
+/*   -----Academic Training ------*/
+
+
+.Training-Section{
+  padding: 5rem 0;
+  background-color: #fffaf2;;
+}
+
+.Training-row{
+  max-width: 132rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.AcademicTrainingCard{
+  width: 22rem;
+  height: 28rem;
+  background-color: white;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 20px;
+  transition: transform 0.3s ease;
+}
+
+.AcademicTrainingCard:hover{
+  transform: translateY(-8px)
+}
+
+.AcademicTrainingCard img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.AcademicTraining-info {
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.AcademicTraining-name{
+  font-weight: bold;
+}
+
+.training-header {
+  max-width: 132rem;
+  margin: 0 auto 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.training-header input {
+  width: 260px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+
+/* --- SocialMediaSection ---*/
+
+.SocialMedia-Section {
+  padding: 5rem 0;
+  background-color: #fffaf2;
+}
+
+.Social-container {
+  max-width: 132rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.Person-Social {
+  flex: 1;
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 20px;
+  text-align: center;
+}
+
+.Person-name {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.Social-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.Social-Icon-Card {
+  width: 80px;          /* was 60 */
+  height: 80px;         /* was 60 */
+  border-radius: 50%;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Social-Icon-Card img {
+  width: 40px;          /* was 30 */
+  height: 40px;         /* was 30 */
+}
+
+
+.Social-Icon-Card:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 6px 15px;
+}
+
+/* -------Awards and Achievement -------*/
+
+
+.AwardSection{
+  padding: 5rem 0;
+  background-color: #fffaf2;;
+}
+
+.Award-scroll {
+  max-width: 132rem;
+  margin: auto;
+  overflow-x: auto;
+  padding-bottom: 1.5rem; /* space for scrollbar */
+}
+
+.Award-row {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content; /* KEY for horizontal scroll */
+}
+
+.Award-card{
+  width: 22rem;
+  height: 28rem;
+  background-color: white;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 20px;
+  transition: transform 0.3s ease;
+}
+
+.Award-card:hover{
+  transform: translateY(-8px)
+}
+
+.Award-card img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
