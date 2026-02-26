@@ -7,7 +7,7 @@ export const BookSection = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/books")
+    axios.get("http://yogaguru-0tj2.onrender.com/api/books")
       .then(res => setBooks(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -17,7 +17,7 @@ export const BookSection = () => {
       {books.map((book) => (
         <BookCard
           key={book.id}
-          image={`http://localhost:5000/${book.image}`}
+          image={`http://yogaguru-0tj2.onrender.com/${book.image}`}
           BookName={book.name}
           price={book.price}
         />
