@@ -1,84 +1,45 @@
 const express = require("express");
 const router = express.Router();
-const Book = require("../models/Book");
-const multer = require("multer");
-const path = require("path");
-const { verifyToken, isAdmin } = require("../middleware/authMiddleware");
-
-/* IMAGE UPLOAD */
-const storage = multer.diskStorage({
-  destination: "uploads/",
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname));
-  }
-});
-
-const upload = multer({ storage });
-
+const pool = require("../config/db");
 
 /* CREATE BOOK */
-router.post(
-  "/",
-  verifyToken,
-  isAdmin,
-  upload.single("Image"),
-  async (req, res) => {
-    try {
+router.post("/", async (req, res) => {
+  try {
+    const { Name, Price, Image } = req.body;
 
-      const book = new Book({
-        Name: req.body.Name,
-        Price: req.body.Price,
-        Image: req.file ? req.file.path : ""
-      });
+    const result = await pool.query(
+      "INSERT INTO books (name, price, image) VALUES ($1,$2,$3) RETURNING *",
+      [Name, Price, Image]
+    );
 
-      await book.save();
+    res.json(result.rows[0]);
 
-      res.json(book);
-
-    } catch (err) {
-      res.status(500).json(err.message);
-    }
+  } catch (err) {
+    res.status(500).json(err.message);
   }
-);
-
+});
 
 /* READ BOOKS */
 router.get("/", async (req, res) => {
-  const books = await Book.find();
-  res.json(books);
+  const result = await pool.query("SELECT * FROM books ORDER BY id DESC");
+  res.json(result.rows);
 });
 
+/* UPDATE BOOK */
+router.put("/:id", async (req, res) => {
+  const { Name, Price, Image } = req.body;
 
-/* UPDATE */
-router.put(
-  "/:id",
-  verifyToken,
-  isAdmin,
-  upload.single("Image"),
-  async (req, res) => {
+  const result = await pool.query(
+    "UPDATE books SET name=$1, price=$2, image=$3 WHERE id=$4 RETURNING *",
+    [Name, Price, Image, req.params.id]
+  );
 
-    const updateData = {
-      Name: req.body.Name,
-      Price: req.body.Price
-    };
-
-    if (req.file) {
-      updateData.Image = req.file.path;
-    }
-
-    const updated = await Book.findByIdAndUpdate(
-      req.params.id,
-      updateData,
-      { new: true }
-    );
-
-    res.json(updated);
+  res.json(result.rows[0]);
 });
 
-
-/* DELETE */
-router.delete("/:id", verifyToken, isAdmin, async (req, res) => {
-  await Book.findByIdAndDelete(req.params.id);
+/* DELETE BOOK */
+router.delete("/:id", async (req, res) => {
+  await pool.query("DELETE FROM books WHERE id=$1", [req.params.id]);
   res.json("Deleted");
 });
 
